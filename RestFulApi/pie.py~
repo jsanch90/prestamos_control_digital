@@ -1,0 +1,47 @@
+import pymongo as mongo
+
+class pie_controller:
+    
+    client = mongo.MongoClient()
+    db = client.Pie
+
+    def crearUsuario(self,nombreCompleto,codigoEstudiante,codigoCarne,correo,celular):
+        self.db.usuarios.insert({"nombre":nombreCompleto,"codigoE":codigoEstudiante,"codigoC":codigoCarne,"correo":correo,"celular":celular,"observaciones":" ","items":[]})
+
+#debug usuario
+#crearUsuario("Joshua Arley Castro Villa","201610049010","12345668","jsanc@sdfsdf.edu.co","30023424055")
+
+    def ponerObservaciones(self,codigo,observaciones):
+        self.db.usuarios.update({"codigoC":codigo},{"$set":{"observaciones":observaciones}})
+
+    def agregarItem(self,nombre):
+        self.db.items.insert({"nombre":nombre,"vecesPrestado":0})
+
+    def agregarItemUsuario(self,items,codigo):
+        self.db.usuarios.update({ "codigoC":codigo},{ "$push": { "items": { "$each":items}}})
+        
+        for item in items:
+            current=self.db.items.find({"nombre":item})
+            new = current[0]
+            x = new["vecesPrestado"] + 1
+            self.db.items.update({"nombre":item},{"$set":{"vecesPrestado":x}})
+
+    def devolverItemUsuario(self, nombre, codigo):
+        self.db.usuarios.update({"codigoC" : codigo }, { "$pull" : { "items" : {"$in" : nombre } } , {"multi":"false"}})
+        
+    
+#debug update observaciones
+#ponerObservaciones("201610049010","villa cmamo")
+bd = pie_controller()
+x = ["Arduino mkr1000"]
+# bd.agregarItem("Cable2")
+# bd.agregarItem("Monitor2")
+# bd.agregarItem("mouse2")
+
+#baseDeDatos.crearUsuario("El viejo","201610049011","12345668","viejo@sdfsdf.edu.co","3029492420")
+bd.devolverItemUsuario(x,"12345668")
+
+
+
+
+
