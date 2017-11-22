@@ -69,11 +69,21 @@ var InicioPage = (function () {
         this.navCtrl = navCtrl;
         this.alertCtrl = alertCtrl;
         this.loginServicesProvider = loginServicesProvider;
-        this.admin = '';
-        this.contrasena = '';
     }
     InicioPage.prototype.verificar = function (usuario, contrasena) {
-        this.loginServicesProvider.verificarUsuario(usuario, contrasena);
+        var _this = this;
+        console.log('usuario', usuario);
+        console.log('contra', contrasena);
+        this.admini = this.loginServicesProvider.verificarUsuario(usuario, contrasena);
+        console.log('usuario', usuario);
+        this.admini.subscribe(function (x) {
+            if (x.includes("true")) {
+                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__pages_administracion_administracion__["a" /* AdministracionPage */]);
+            }
+            else {
+                console.log('Error');
+            }
+        });
     };
     InicioPage.prototype.mostrarIngreso = function () {
         var _this = this;
@@ -102,8 +112,7 @@ var InicioPage = (function () {
                     text: 'Ingresar',
                     handler: function (data) {
                         console.log(typeof (data.usuario));
-                        console.log(_this.verificar(data.usuario, data.contrasena));
-                        _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__pages_administracion_administracion__["a" /* AdministracionPage */]);
+                        _this.verificar(data.usuario, data.contrasena);
                         console.log('Saved clicked');
                     }
                 }
@@ -113,7 +122,7 @@ var InicioPage = (function () {
     };
     InicioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-inicio',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n     Administración\n  </button>\n</ion-content>\n`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/inicio/inicio.html"*/
+            selector: 'page-inicio',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/PIE/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n     Administración\n  </button>\n</ion-content>\n`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/PIE/prestamos_control_digital/src/pages/inicio/inicio.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
@@ -156,8 +165,10 @@ var LoginServicesProvider = (function () {
         this.apiUrl = this.providerSettingsProvider.getApiUrl();
     }
     LoginServicesProvider.prototype.verificarUsuario = function (usuario, contrasena) {
-        return this.http.post(this.apiUrl + 'administracion/', { 'usuario': usuario, 'contrasena': contrasena }).
-            map(function (response) { return response.json(); });
+        console.log('usuario srvice', usuario);
+        console.log('contrasena srvice', contrasena);
+        return this.http.post(this.apiUrl + 'administracion', { 'usuario': usuario, 'contrasena': contrasena }).
+            map(function (response) { return response.text(); });
     };
     LoginServicesProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
@@ -330,7 +341,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/PIE/prestamos_control_digital/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/PIE/prestamos_control_digital/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -375,7 +386,7 @@ var AdministracionPage = (function () {
     };
     AdministracionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-administracion',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" class="btn_item">\n      Agregar item\n    </button>\n\n  <button ion-button round color="secondary" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <ion-content class="contenido2">\n\n  <h1 text-center class="lbl_actualizarinfo">\n      Actualizar información\n    </h1>\n\n  <ion-list class="lista_izq">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n<ion-list class="lista_der">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n</ion-content>\n\n</ion-content>`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
+            selector: 'page-administracion',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/PIE/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" class="btn_item">\n      Agregar item\n    </button>\n\n  <button ion-button round color="secondary" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <ion-content class="contenido2">\n\n  <h1 text-center class="lbl_actualizarinfo">\n      Actualizar información\n    </h1>\n\n  <ion-list class="lista_izq">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n<ion-list class="lista_der">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n</ion-content>\n\n</ion-content>`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/PIE/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], AdministracionPage);
