@@ -25678,6 +25678,30 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-administracion .btn_actualizar {
+  position: absolute;
+  top: 50%;
+  left: 41%;
+}
+
+page-administracion .lbl_actualizarinfo {
+  position: absolute;
+  top: 35%;
+  left: 10%;
+}
+
+page-administracion .lista_izq {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+
+page-administracion .lista_der {
+  position: absolute;
+  top: 40%;
+  right: 10%;
+}
+
 page-inicio .contenido {
   background-image: url("../assets/imgs/eafit_bg.jpg");
   position: absolute;

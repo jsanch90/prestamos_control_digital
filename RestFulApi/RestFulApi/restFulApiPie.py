@@ -94,16 +94,22 @@ def itemPorPersona():
     return jsonify({'result' : items})
   
 @app.route('/administracion', methods=['POST'])
+#@crossdomain(origin='*')
 def validarIngreso():
+    print "server"
     user = request.json['usuario']
+    print request
     contra = request.json['contrasena']
-    admin = mongo.db.admin.find({"usuario": user})
-    print type(admin[0]['contrasena'])
-    print type(contra)
-    if admin[0]['contrasena'] == contra:
-      return jsonify({'result':True})
-    else:
-      return jsonify({'result' : False})
+    print user
+    print contra
+    try:
+      admin = mongo.db.admin.find({"usuario": user})
+      if admin[0]['contrasena'] == contra:
+        return jsonify(True)
+      else:
+        return jsonify(False)
+    except:
+      return jsonify(False)
 
 
 @app.route('/actualizarInf', methods=['PUT'])
