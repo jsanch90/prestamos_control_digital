@@ -124,12 +124,13 @@ var InicioPage = (function () {
     };
     InicioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-inicio',template:/*ion-inline-start:"C:\Users\Hassler\Documents\GitHub\prestamos_control_digital\src\pages\inicio\inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n     Administración\n  </button>\n</ion-content>\n`/*ion-inline-end:"C:\Users\Hassler\Documents\GitHub\prestamos_control_digital\src\pages\inicio\inicio.html"*/
+            selector: 'page-inicio',template:/*ion-inline-start:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n     Administración\n  </button>\n</ion-content>\n`/*ion-inline-end:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/inicio/inicio.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */]])
     ], InicioPage);
     return InicioPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=inicio.js.map
@@ -178,10 +179,10 @@ var LoginServicesProvider = (function () {
     };
     LoginServicesProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__["a" /* ProviderSettingsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__["a" /* ProviderSettingsProvider */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__["a" /* ProviderSettingsProvider */]])
     ], LoginServicesProvider);
     return LoginServicesProvider;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=login-services.js.map
@@ -347,7 +348,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Hassler\Documents\GitHub\prestamos_control_digital\src\app\app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"C:\Users\Hassler\Documents\GitHub\prestamos_control_digital\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -392,7 +393,7 @@ var AdministracionPage = (function () {
     };
     AdministracionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-administracion',template:/*ion-inline-start:"C:\Users\Hassler\Documents\GitHub\prestamos_control_digital\src\pages\administracion\administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" class="btn_item">\n      Agregar item\n    </button>\n\n  <button ion-button round color="secondary" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <ion-content class="contenido2">\n\n  <h1 text-center class="lbl_actualizarinfo">\n      Actualizar información\n    </h1>\n\n  <ion-list class="lista_izq">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n<ion-list class="lista_der">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n</ion-content>\n\n</ion-content>`/*ion-inline-end:"C:\Users\Hassler\Documents\GitHub\prestamos_control_digital\src\pages\administracion\administracion.html"*/,
+            selector: 'page-administracion',template:/*ion-inline-start:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" class="btn_item">\n      Agregar item\n    </button>\n\n  <button ion-button round color="secondary" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <ion-content class="contenido2">\n\n  <h1 text-center class="lbl_actualizarinfo">\n      Actualizar información\n    </h1>\n\n  <ion-list class="lista_izq">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n<ion-list class="lista_der">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n</ion-content>\n\n</ion-content>`/*ion-inline-end:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], AdministracionPage);
