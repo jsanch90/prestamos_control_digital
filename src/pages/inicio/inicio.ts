@@ -10,11 +10,14 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'inicio.html'
 })
 export class InicioPage {
-  admini : Observable<any>; 
+  admini : Observable<any>;
+  direccion : Observable<any>;
 
   constructor(public navCtrl: NavController,
               public alertCtrl: AlertController,
               public loginServicesProvider: LoginServicesProvider) {
+              this.direccion = this.loginServicesProvider.direccionarPaginaInicio();
+              console.log(this.direccion[0]);
   }
 
   verificar(usuario, contrasena){
@@ -23,7 +26,7 @@ export class InicioPage {
     this.admini = this.loginServicesProvider.verificarUsuario(usuario, contrasena);
     console.log('usuario', usuario);
     this.admini.subscribe(x => {
-  
+
       if(x.includes("true")){
         this.navCtrl.setRoot(AdministracionPage);
       }else{
@@ -40,7 +43,7 @@ export class InicioPage {
         {
           name: 'usuario',
           placeholder: 'Usuario',
-          
+
         },
         {
           name: 'contrasena',
