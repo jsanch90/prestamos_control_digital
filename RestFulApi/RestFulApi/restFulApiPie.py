@@ -2,6 +2,7 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 from flask_pymongo import PyMongo
+import serial
 
 app = Flask(__name__)
 
@@ -9,6 +10,45 @@ app.config['MONGO_DBNAME'] = 'Pie'
 app.config['MONGO_URI'] = 'mongodb://localhost:27017/Pie'
 
 mongo = PyMongo(app)
+
+
+
+@app.route('/obtenerCodigo' , methods=['GET'])
+def obtenerCodigo():
+  print "entra a obtener codigo"
+  output = []
+  codigo = ''
+  ser = serial.Serial("/dev/ttyACM0" , 9600)
+
+  while True:
+   # try:
+      codigo = ser.readline()
+      print codigo
+      if (len(codigo) > 0):
+        codigo = codigo.replace("\r\n", '')
+        try:
+          estudiantes = mongo.db.usuarios.find({"codigoC": codigo})
+          sujeto = estudiantes[0]
+          output.append(sujeto["items"])
+          output.append(sujeto["observaciones"])
+          output.append(sujeto["correo"])
+          output.append(sujeto["codigoC"])
+          output.append(sujeto["codigoE"])
+          output.append(sujeto["nombre"])
+          output.append(sujeto["celular"])
+          ser.close()
+          return jsonify({'result': output})
+        except:
+          ser.close()
+          return jsonify({'result': False})
+      else:
+        codigo = ser.readline()
+    #except:
+     # print "error"
+
+  return jsonify({'result':codigo})
+
+
 
 @app.route('/items', methods=['GET'])
 def obtenerTodosLosItems():
