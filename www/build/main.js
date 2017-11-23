@@ -187,7 +187,106 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 159:
+=======
+/***/ 197:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_administracion_administracion__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__ = __webpack_require__(198);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var InicioPage = (function () {
+    function InicioPage(navCtrl, alertCtrl, loginServicesProvider) {
+        this.navCtrl = navCtrl;
+        this.alertCtrl = alertCtrl;
+        this.loginServicesProvider = loginServicesProvider;
+        this.direccion = this.loginServicesProvider.direccionarPaginaInicio();
+        console.log(this.direccion[0]);
+    }
+    InicioPage.prototype.verificar = function (usuario, contrasena) {
+        var _this = this;
+        console.log('usuario', usuario);
+        console.log('contra', contrasena);
+        this.admini = this.loginServicesProvider.verificarUsuario(usuario, contrasena);
+        console.log('usuario', usuario);
+        this.admini.subscribe(function (x) {
+            if (x.includes("true")) {
+                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__pages_administracion_administracion__["a" /* AdministracionPage */]);
+            }
+            else {
+                console.log('Error');
+            }
+        });
+    };
+    InicioPage.prototype.mostrarIngreso = function () {
+        var _this = this;
+        var prompt = this.alertCtrl.create({
+            title: 'Administración',
+            message: "Ingrese su usuario y contraseña",
+            inputs: [
+                {
+                    name: 'usuario',
+                    placeholder: 'Usuario',
+                },
+                {
+                    name: 'contrasena',
+                    placeholder: 'Contraseña',
+                    type: 'password'
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Cancelar',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Ingresar',
+                    handler: function (data) {
+                        console.log(typeof (data.usuario));
+                        _this.verificar(data.usuario, data.contrasena);
+                        console.log('Saved clicked');
+                    }
+                }
+            ]
+        });
+        prompt.present();
+    };
+    InicioPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-inicio',template:/*ion-inline-start:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n     Administración\n  </button>\n</ion-content>\n`/*ion-inline-end:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/inicio/inicio.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */]])
+    ], InicioPage);
+    return InicioPage;
+}());
+
+//# sourceMappingURL=inicio.js.map
+
+/***/ }),
+
+/***/ 198:
+>>>>>>> 7e5738a9c57419eca0fda38b17f3d5caf2903370
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -222,10 +321,17 @@ var LoginServicesProvider = (function () {
         return this.http.post(this.apiUrl + 'administracion', { 'usuario': usuario, 'contrasena': contrasena }).
             map(function (response) { return response.text(); });
     };
+<<<<<<< HEAD
     LoginServicesProvider.prototype.direccionarPagina = function () {
         var x = this.apiUrl + 'obtenerCodigo';
         console.log("api", x);
         return this.http.get(this.apiUrl + 'obtenerCodigo').map(function (response) { return response.json().result; });
+=======
+    LoginServicesProvider.prototype.direccionarPaginaInicio = function () {
+        console.log("aca estamoloco");
+        return this.http.get(this.apiUrl + 'obtenerCodigo').
+            map(function (response) { return response.json().result; });
+>>>>>>> 7e5738a9c57419eca0fda38b17f3d5caf2903370
     };
     LoginServicesProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
@@ -373,7 +479,11 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
+<<<<<<< HEAD
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/app/app.html"*/
+=======
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/app/app.html"*/
+>>>>>>> 7e5738a9c57419eca0fda38b17f3d5caf2903370
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -607,7 +717,11 @@ var InicioPage = (function () {
     };
     InicioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+<<<<<<< HEAD
             selector: 'page-inicio',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n    Administración\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_prestar">\n    <ion-icon name="ios-basket-outline">\n    </ion-icon>\n    Prestar\n  </button>\n\n  <button ion-button round color="secondary" (click)="prestarItem()">\n    prestarrrr\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/inicio/inicio.html"*/
+=======
+            selector: 'page-administracion',template:/*ion-inline-start:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" class="btn_item">\n      Agregar item\n    </button>\n\n  <button ion-button round color="secondary" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <ion-content class="contenido2">\n\n  <h1 text-center class="lbl_actualizarinfo">\n      Actualizar información\n    </h1>\n\n  <ion-list class="lista_izq">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n<ion-list class="lista_der">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n</ion-content>\n\n</ion-content>`/*ion-inline-end:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
+>>>>>>> 7e5738a9c57419eca0fda38b17f3d5caf2903370
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */]) === "function" && _c || Object])
     ], InicioPage);

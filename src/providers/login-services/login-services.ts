@@ -18,8 +18,13 @@ export class LoginServicesProvider {
     console.log('contrasena srvice',contrasena)
     return this.http.post(this.apiUrl+'administracion', {'usuario': usuario, 'contrasena': contrasena}).
            map(response => response.text());
+  }
 
-
+  public direccionarPaginaInicio(){
+    console.log("aca estamoloco")
+    
+    return this.http.get(this.apiUrl + 'obtenerCodigo').
+           map(response => response.json().result);
   }
 
   public direccionarPagina(){
