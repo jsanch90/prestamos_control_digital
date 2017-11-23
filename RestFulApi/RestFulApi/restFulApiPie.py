@@ -4,6 +4,7 @@ from flask import request
 from flask_pymongo import PyMongo
 from flask_cors import CORS
 import serial
+import time
 
 app = Flask(__name__)
 CORS(app)
@@ -24,9 +25,14 @@ def obtenerCodigo():
   while True:
    # try:
       codigo = ser.readline()
+      time.sleep(0.4)
       print codigo
-      if (len(codigo) > 0):
+      if (len(codigo) >= 11):
         codigo = codigo.replace("\r\n", '')
+        print codigo
+        codigo = codigo[len(codigo)-11:]
+        print "nuevo codigo"
+        print codigo
         try:
           estudiantes = mongo.db.usuarios.find({"codigoC": codigo})
           sujeto = estudiantes[0]
@@ -38,15 +44,15 @@ def obtenerCodigo():
           output.append(sujeto["nombre"])
           output.append(sujeto["celular"])
           ser.close()
-          return jsonify({'result': output})
+          return jsonify({'status':'true','result': output})
         except:
           ser.close()
-          return jsonify({'result': False})
+          return jsonify({'status':'false','codigo':codigo})
       else:
         codigo = ser.readline()
+        time.sleep(0.4)
     #except:
      # print "error"
-
   return jsonify({'result':codigo})
 
 

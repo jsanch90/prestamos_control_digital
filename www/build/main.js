@@ -67,7 +67,7 @@ var AdministracionPage = (function () {
     };
     AdministracionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-administracion',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" [(ngModel)]="item"></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" (click)="agregarItem()" class="btn_item">\n    Agregar item\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <h1 text-center class="lbl_actualizarinfo">\n    Actualizar información\n  </h1>\n\n  <ion-list class="lista_izq">\n\n    <ion-item>\n      <ion-label fixed color="dark">Nombre</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Correo</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Código</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Celular</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list class="lista_der">\n\n    <ion-item>\n      <ion-label fixed color="dark">Nombre</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Correo</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Código</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Celular</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  {{ item }}\n\n  <button ion-button round color="secondary" class="btn_guardar">\n    Guardar\n  </button>\n\n  <button ion-button round color="danger" (click)="volverInicio()" class="btn_salir">\n    Salir\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
+            selector: 'page-administracion',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" [(ngModel)]="item"></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" (click)="agregarItem()" class="btn_item">\n    Agregar item\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <h1 text-center class="lbl_actualizarinfo">\n    Actualizar información\n  </h1>\n\n  <ion-list class="lista_izq">\n\n    <ion-item>\n      <ion-label fixed color="dark">Nombre</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Correo</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Código</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Celular</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list class="lista_der">\n\n    <ion-item>\n      <ion-label fixed color="dark">Nombre</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Correo</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Código</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Celular</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  {{ item }}\n\n  <button ion-button round color="secondary" class="btn_guardar">\n    Guardar\n  </button>\n\n  <button ion-button round color="danger" (click)="volverInicio()" class="btn_salir">\n    Salir\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -129,12 +129,13 @@ var PrestamoPage = (function () {
     };
     PrestamoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-prestamo',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/`<ion-content padding>\n\n  <ion-list class="list_compra">\n\n    <h1>\n      Carrito\n    </h1>\n\n    <ion-item>\n\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list class="list_inventario">\n\n    <h1>\n      Tienda\n    </h1>\n\n    <!-- <ion-select [(ngModel)]="toppings" multiple="true">\n      <ion-option>\n        {{ item.nombre }}\n      </ion-option>\n    </ion-select> -->\n\n    <ion-item *ngFor="let item of items |  async" >\n      <ion-label>{{ item.nombre }}</ion-label>\n      <ion-checkbox value="item.nombre" (click)="agregarCarrito(item.nombre)">></ion-checkbox>\n\n    \n      \n    </ion-item>\n    {{ itemSeleccionado }}\n    <!-- {{ item.checked }} -->\n    <!-- <ion-item *ngFor="let item of items |  async">\n      <ion-select > -->\n    <!-- <ion-option [(ngModel)]="toppings" multiple="true"> -->\n    <!-- {{ item.nombre }}\n        <! </ion-option> -->\n    <!-- </ion-select>\n    </ion-item>  -->\n\n  </ion-list>\n\n  <!-- {{ itemscheck }} -->\n\n</ion-content>`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/,
+            selector: 'page-prestamo',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/`<ion-content padding>\n\n  <ion-list class="list_compra">\n\n    <h1>\n      Carrito\n    </h1>\n\n    <ion-item>\n\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list class="list_inventario">\n\n    <h1>\n      Tienda\n    </h1>\n\n    <!-- <ion-select [(ngModel)]="toppings" multiple="true">\n      <ion-option>\n        {{ item.nombre }}\n      </ion-option>\n    </ion-select> -->\n\n    <ion-item *ngFor="let item of items |  async" >\n      <ion-label>{{ item.nombre }}</ion-label>\n      <ion-checkbox value="item.nombre" (click)="agregarCarrito(item.nombre)">></ion-checkbox>\n\n    \n      \n    </ion-item>\n    {{ itemSeleccionado }}\n    <!-- {{ item.checked }} -->\n    <!-- <ion-item *ngFor="let item of items |  async">\n      <ion-select > -->\n    <!-- <ion-option [(ngModel)]="toppings" multiple="true"> -->\n    <!-- {{ item.nombre }}\n        <! </ion-option> -->\n    <!-- </ion-select>\n    </ion-item>  -->\n\n  </ion-list>\n\n  <!-- {{ itemscheck }} -->\n\n</ion-content>`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_item_service_item_service__["a" /* ItemServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_item_service_item_service__["a" /* ItemServiceProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_item_service_item_service__["a" /* ItemServiceProvider */]])
     ], PrestamoPage);
     return PrestamoPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=prestamo.js.map
@@ -187,106 +188,7 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ 159:
-=======
-/***/ 197:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InicioPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_administracion_administracion__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__ = __webpack_require__(198);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var InicioPage = (function () {
-    function InicioPage(navCtrl, alertCtrl, loginServicesProvider) {
-        this.navCtrl = navCtrl;
-        this.alertCtrl = alertCtrl;
-        this.loginServicesProvider = loginServicesProvider;
-        this.direccion = this.loginServicesProvider.direccionarPaginaInicio();
-        console.log(this.direccion[0]);
-    }
-    InicioPage.prototype.verificar = function (usuario, contrasena) {
-        var _this = this;
-        console.log('usuario', usuario);
-        console.log('contra', contrasena);
-        this.admini = this.loginServicesProvider.verificarUsuario(usuario, contrasena);
-        console.log('usuario', usuario);
-        this.admini.subscribe(function (x) {
-            if (x.includes("true")) {
-                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__pages_administracion_administracion__["a" /* AdministracionPage */]);
-            }
-            else {
-                console.log('Error');
-            }
-        });
-    };
-    InicioPage.prototype.mostrarIngreso = function () {
-        var _this = this;
-        var prompt = this.alertCtrl.create({
-            title: 'Administración',
-            message: "Ingrese su usuario y contraseña",
-            inputs: [
-                {
-                    name: 'usuario',
-                    placeholder: 'Usuario',
-                },
-                {
-                    name: 'contrasena',
-                    placeholder: 'Contraseña',
-                    type: 'password'
-                }
-            ],
-            buttons: [
-                {
-                    text: 'Cancelar',
-                    handler: function (data) {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Ingresar',
-                    handler: function (data) {
-                        console.log(typeof (data.usuario));
-                        _this.verificar(data.usuario, data.contrasena);
-                        console.log('Saved clicked');
-                    }
-                }
-            ]
-        });
-        prompt.present();
-    };
-    InicioPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-inicio',template:/*ion-inline-start:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n     Administración\n  </button>\n</ion-content>\n`/*ion-inline-end:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/inicio/inicio.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */]])
-    ], InicioPage);
-    return InicioPage;
-}());
-
-//# sourceMappingURL=inicio.js.map
-
-/***/ }),
-
-/***/ 198:
->>>>>>> 7e5738a9c57419eca0fda38b17f3d5caf2903370
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -321,24 +223,26 @@ var LoginServicesProvider = (function () {
         return this.http.post(this.apiUrl + 'administracion', { 'usuario': usuario, 'contrasena': contrasena }).
             map(function (response) { return response.text(); });
     };
-<<<<<<< HEAD
-    LoginServicesProvider.prototype.direccionarPagina = function () {
-        var x = this.apiUrl + 'obtenerCodigo';
-        console.log("api", x);
-        return this.http.get(this.apiUrl + 'obtenerCodigo').map(function (response) { return response.json().result; });
-=======
     LoginServicesProvider.prototype.direccionarPaginaInicio = function () {
         console.log("aca estamoloco");
         return this.http.get(this.apiUrl + 'obtenerCodigo').
-            map(function (response) { return response.json().result; });
->>>>>>> 7e5738a9c57419eca0fda38b17f3d5caf2903370
+            map(function (response) { return response.json(); });
+    };
+    LoginServicesProvider.prototype.direccionarPagina = function () {
+        var x = this.apiUrl + 'obtenerCodigo';
+        console.log("api", x);
+        return this.http.get(this.apiUrl + 'obtenerCodigo').map(function (response) { return response.json(); });
+    };
+    LoginServicesProvider.prototype.hacerRegistro = function (nombre, correo, codigoE, celular, codigoC) {
+        return this.http.post(this.apiUrl + 'usuario', { 'nombre': nombre, 'correo': correo, 'codigoE': codigoE, 'codigoC': codigoC, 'celular': celular }).
+            map(function (response) { return response.json(); });
     };
     LoginServicesProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__["a" /* ProviderSettingsProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__["a" /* ProviderSettingsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__["a" /* ProviderSettingsProvider */]) === "function" && _b || Object])
     ], LoginServicesProvider);
     return LoginServicesProvider;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=login-services.js.map
@@ -479,11 +383,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-<<<<<<< HEAD
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/app/app.html"*/
-=======
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/app/app.html"*/
->>>>>>> 7e5738a9c57419eca0fda38b17f3d5caf2903370
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -600,11 +500,7 @@ var InicioPage = (function () {
         this.navCtrl = navCtrl;
         this.alertCtrl = alertCtrl;
         this.loginServicesProvider = loginServicesProvider;
-        this.direcciones();
     }
-    InicioPage.prototype.direcciones = function () {
-        this.direction = this.loginServicesProvider.direccionarPagina().subscribe();
-    };
     InicioPage.prototype.verificar = function (usuario, contrasena) {
         var _this = this;
         console.log('usuario', usuario);
@@ -659,20 +555,26 @@ var InicioPage = (function () {
         var _this = this;
         var alert = this.alertCtrl.create({
             title: 'Aviso',
-            subTitle: 'Acerque el carné al lector por favor',
-            buttons: [
-                {
-                    text: 'OK',
-                    handler: function (data) {
-                        _this.registrarUsuario();
-                        console.log('OK clicked');
-                    }
-                }
-            ]
+            subTitle: 'Por favor acerque su carné al lector',
         });
         alert.present();
+        this.loginServicesProvider.direccionarPagina().subscribe(function (x) {
+            var estado = x.status;
+            if (estado.includes('true')) {
+                console.log('Estamos en prestamos');
+                alert.dismiss();
+                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__prestamo_prestamo__["a" /* PrestamoPage */], { usuario: x.result });
+            }
+            else {
+                console.log('Estamos en registrar usuario');
+                alert.dismiss();
+                _this.registrarUsuario(x.codigo);
+            }
+        });
+        //console.log(this.direction)    
     };
-    InicioPage.prototype.registrarUsuario = function () {
+    InicioPage.prototype.registrarUsuario = function (codigo) {
+        var _this = this;
         var prompt = this.alertCtrl.create({
             title: 'Registro de usuario',
             message: "Complete todos los campos para su registro",
@@ -704,6 +606,7 @@ var InicioPage = (function () {
                 {
                     text: 'Guardar',
                     handler: function (data) {
+                        _this.loginServicesProvider.hacerRegistro(data.nombre, data.correo, data.codigo, data.celular, codigo).subscribe();
                         console.log('Guardar clicked');
                     }
                 }
@@ -714,14 +617,11 @@ var InicioPage = (function () {
     // Método provisional
     InicioPage.prototype.prestarItem = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__prestamo_prestamo__["a" /* PrestamoPage */]);
+        this.direction = this.loginServicesProvider.direccionarPagina().subscribe();
     };
     InicioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-<<<<<<< HEAD
-            selector: 'page-inicio',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n    Administración\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_prestar">\n    <ion-icon name="ios-basket-outline">\n    </ion-icon>\n    Prestar\n  </button>\n\n  <button ion-button round color="secondary" (click)="prestarItem()">\n    prestarrrr\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/inicio/inicio.html"*/
-=======
-            selector: 'page-administracion',template:/*ion-inline-start:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" class="btn_item">\n      Agregar item\n    </button>\n\n  <button ion-button round color="secondary" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <ion-content class="contenido2">\n\n  <h1 text-center class="lbl_actualizarinfo">\n      Actualizar información\n    </h1>\n\n  <ion-list class="lista_izq">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n<ion-list class="lista_der">\n    \n  <ion-item>\n    <ion-label fixed color="dark">Nombre</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Correo</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Código</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed color="dark">Celular</ion-label>\n    <ion-input type="text" value=""></ion-input>\n  </ion-item>\n\n</ion-list>\n\n</ion-content>\n\n</ion-content>`/*ion-inline-end:"/home/pi/prestamoControlDigital/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
->>>>>>> 7e5738a9c57419eca0fda38b17f3d5caf2903370
+            selector: 'page-inicio',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n    Administración\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_prestar">\n    <ion-icon name="ios-basket-outline">\n    </ion-icon>\n    Prestar\n  </button>\n\n  <button ion-button round color="secondary" (click)="prestarItem()">\n    prestarrrr\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/inicio/inicio.html"*/
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */]) === "function" && _c || Object])
     ], InicioPage);

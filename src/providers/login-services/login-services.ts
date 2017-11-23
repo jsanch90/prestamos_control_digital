@@ -24,13 +24,18 @@ export class LoginServicesProvider {
     console.log("aca estamoloco")
     
     return this.http.get(this.apiUrl + 'obtenerCodigo').
-           map(response => response.json().result);
+           map(response => response.json());
   }
 
   public direccionarPagina(){
     var x = this.apiUrl+'obtenerCodigo'
     console.log("api", x)
-    return this.http.get(this.apiUrl+'obtenerCodigo').map(response => response.json().result);
+    return this.http.get(this.apiUrl+'obtenerCodigo').map(response => response.json());
+  }
+
+  public hacerRegistro(nombre,correo,codigoE,celular,codigoC){
+    return this.http.post(this.apiUrl+'usuario', {'nombre': nombre, 'correo': correo,'codigoE':codigoE,'codigoC':codigoC,'celular':celular}).
+    map(response => response.json());
   }
 
   

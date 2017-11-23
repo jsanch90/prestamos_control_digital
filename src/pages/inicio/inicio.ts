@@ -18,14 +18,8 @@ export class InicioPage {
   constructor(public navCtrl: NavController,
     public alertCtrl: AlertController,
     public loginServicesProvider: LoginServicesProvider) { 
-      this.direcciones();
-    
-
   }
 
-  direcciones(){
-    this.direction = this.loginServicesProvider.direccionarPagina().subscribe();
-  }
 
   verificar(usuario, contrasena) {
     console.log('usuario', usuario)
@@ -82,21 +76,25 @@ export class InicioPage {
   acercarCarnet() {
     let alert = this.alertCtrl.create({
       title: 'Aviso',
-      subTitle: 'Acerque el carné al lector por favor',
-      buttons: [
-        {
-          text: 'OK',
-          handler: data => {
-            this.registrarUsuario();
-            console.log('OK clicked');
-          }
-        }
-      ]
+      subTitle: 'Por favor acerque su carné al lector',
     });
-    alert.present();
+    alert.present()
+    this.loginServicesProvider.direccionarPagina().subscribe(x => {
+      let estado = x.status
+      if(estado.includes('true')){
+        console.log('Estamos en prestamos')
+        alert.dismiss();
+        this.navCtrl.setRoot(PrestamoPage,{usuario:x.result});
+      }else{
+        console.log('Estamos en registrar usuario')
+        alert.dismiss();
+        this.registrarUsuario(x.codigo);
+      }
+    });
+    //console.log(this.direction)    
   }
 
-  registrarUsuario() {
+  registrarUsuario(codigo) {
     let prompt = this.alertCtrl.create({
       title: 'Registro de usuario',
       message: "Complete todos los campos para su registro",
@@ -130,6 +128,7 @@ export class InicioPage {
         {
           text: 'Guardar',
           handler: data => {
+            this.loginServicesProvider.hacerRegistro(data.nombre,data.correo,data.codigo,data.celular,codigo).subscribe();
             console.log('Guardar clicked');
           }
 
@@ -142,6 +141,7 @@ export class InicioPage {
   // Método provisional
   prestarItem() {
     this.navCtrl.push(PrestamoPage);
+    this.direction = this.loginServicesProvider.direccionarPagina().subscribe();
   }
 
 }
