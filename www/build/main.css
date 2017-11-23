@@ -25680,14 +25680,14 @@ ion-navbar.toolbar {
 
 page-administracion .btn_actualizar {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 41%;
 }
 
 page-administracion .lbl_actualizarinfo {
   position: absolute;
-  top: 35%;
-  left: 10%;
+  top: 25%;
+  left: 41%;
 }
 
 page-administracion .lista_izq {
@@ -25702,6 +25702,18 @@ page-administracion .lista_der {
   right: 10%;
 }
 
+page-administracion .btn_guardar {
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+}
+
+page-administracion .btn_salir {
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+}
+
 page-inicio .contenido {
   background-image: url("../assets/imgs/eafit_bg.jpg");
   position: absolute;
@@ -25711,4 +25723,20 @@ page-inicio .btn_administracion {
   position: absolute;
   bottom: 1%;
   right: 1%;
+}
+
+page-inicio .btn_prestar {
+  position: absolute;
+  bottom: 1%;
+  right: 15%;
+}
+
+page-prestamo .list_compra {
+  position: absolute;
+  left: 10%;
+}
+
+page-prestamo .list_inventario {
+  position: absolute;
+  right: 20%;
 }

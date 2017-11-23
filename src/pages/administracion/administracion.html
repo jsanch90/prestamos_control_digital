@@ -7,71 +7,77 @@
 
   <ion-item>
     <ion-label fixed color="dark">Item</ion-label>
-    <ion-input type="text" value=""></ion-input>
+    <ion-input type="text" [(ngModel)]="item"></ion-input>
   </ion-item>
 
-  <button ion-button round color="secondary" class="btn_item">
-      Agregar item
-    </button>
+  <button ion-button round color="secondary" (click)="agregarItem()" class="btn_item">
+    Agregar item
+  </button>
 
-  <button ion-button round color="secondary" class="btn_actualizar">
+  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_actualizar">
     Actualizar información
   </button>
 
-  <ion-content class="contenido2">
-
   <h1 text-center class="lbl_actualizarinfo">
-      Actualizar información
-    </h1>
+    Actualizar información
+  </h1>
 
   <ion-list class="lista_izq">
-    
-  <ion-item>
-    <ion-label fixed color="dark">Nombre</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-label fixed color="dark">Correo</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label fixed color="dark">Nombre</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label fixed color="dark">Código</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label fixed color="dark">Correo</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label fixed color="dark">Celular</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label fixed color="dark">Código</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
 
-</ion-list>
+    <ion-item>
+      <ion-label fixed color="dark">Celular</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
 
-<ion-list class="lista_der">
-    
-  <ion-item>
-    <ion-label fixed color="dark">Nombre</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
+  </ion-list>
 
-  <ion-item>
-    <ion-label fixed color="dark">Correo</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
+  <ion-list class="lista_der">
 
-  <ion-item>
-    <ion-label fixed color="dark">Código</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label fixed color="dark">Nombre</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
 
-  <ion-item>
-    <ion-label fixed color="dark">Celular</ion-label>
-    <ion-input type="text" value=""></ion-input>
-  </ion-item>
+    <ion-item>
+      <ion-label fixed color="dark">Correo</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
 
-</ion-list>
+    <ion-item>
+      <ion-label fixed color="dark">Código</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
 
-</ion-content>
+    <ion-item>
+      <ion-label fixed color="dark">Celular</ion-label>
+      <ion-input type="text" value=""></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  {{ item }}
+
+  <button ion-button round color="secondary" class="btn_guardar">
+    Guardar
+  </button>
+
+  <button ion-button round color="danger" (click)="volverInicio()" class="btn_salir">
+    Salir
+  </button>
 
 </ion-content>

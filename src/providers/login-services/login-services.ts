@@ -22,6 +22,12 @@ export class LoginServicesProvider {
 
   }
 
+  public direccionarPagina(){
+    var x = this.apiUrl+'obtenerCodigo'
+    console.log("api", x)
+    return this.http.get(this.apiUrl+'obtenerCodigo').map(response => response.json().result);
+  }
+
   
   
 }

@@ -14,8 +14,7 @@ app.config['MONGO_URI'] = 'mongodb://localhost:27017/Pie'
 mongo = PyMongo(app)
 
 
-
-@app.route('/obtenerCodigo' , methods=['GET'])
+@app.route('/obtenerCodigo', methods=['GET'])
 def obtenerCodigo():
   print "entra a obtener codigo"
   output = []
@@ -77,9 +76,19 @@ def crearUsuario():
 @app.route('/item', methods=['POST'])
 def agregarItem():
   nombre = request.json['nombre']
-  mongo.db.items.insert({'nombre' : nombre,'vecesPrestado':0})
-  output = {'nombre' : nombre,'vecesPrestado':0}
-  return jsonify({'result' : output})
+  x= mongo.db.items.find({'nombre':nombre})
+  flag = False
+  try:
+     print x[0]['nombre']
+     flag = False
+  except:
+    flag = True
+  if flag:
+    mongo.db.items.insert({'nombre' : nombre,'vecesPrestado':0})
+  if flag:
+    return jsonify(True)
+  else:
+    return jsonify(False)
 
 
 

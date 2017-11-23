@@ -1,32 +1,32 @@
 page-administracion {
-
-    // .btn_item{
-    //     position: absolute;
-    //     top: 20%;
-    //     left: 41%;
-    // }
-
-    .btn_actualizar{
+    .btn_actualizar {
         position: absolute;
-        top: 50%;
+        top: 70%;
         left: 41%;
     }
-
-    .lbl_actualizarinfo{
+    .lbl_actualizarinfo {
         position: absolute;
-        top: 35%;
-        left: 10%;
+        top: 25%;
+        left: 41%;
     }
-
-    .lista_izq{
+    .lista_izq {
         position: absolute;
         top: 40%;
         left: 10%;
     }
-
-    .lista_der{
+    .lista_der {
         position: absolute;
         top: 40%;
         right: 10%;
+    }
+    .btn_guardar{
+        position: absolute;
+        bottom: 1%;
+        right: 1%;
+    }
+    .btn_salir{
+        position: absolute;
+        bottom: 1%;
+        left: 1%;
     }
 }

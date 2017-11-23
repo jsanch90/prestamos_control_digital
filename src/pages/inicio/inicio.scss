@@ -1,15 +1,16 @@
 page-inicio {
-
-    .contenido{
+    .contenido {
         background-image: url('../assets/imgs/eafit_bg.jpg');
         position: absolute;
-        
     }
-
-    .btn_administracion{
+    .btn_administracion {
         position: absolute;
         bottom: 1%;
         right: 1%;
     }
-
+    .btn_prestar {
+        position: absolute;
+        bottom: 1%;
+        right: 15%;
+    }
 }

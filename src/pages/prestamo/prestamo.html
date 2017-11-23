@@ -1,0 +1,48 @@
+<ion-content padding>
+
+  <ion-list class="list_compra">
+
+    <h1>
+      Carrito
+    </h1>
+
+    <ion-item>
+
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list class="list_inventario">
+
+    <h1>
+      Tienda
+    </h1>
+
+    <!-- <ion-select [(ngModel)]="toppings" multiple="true">
+      <ion-option>
+        {{ item.nombre }}
+      </ion-option>
+    </ion-select> -->
+
+    <ion-item *ngFor="let item of items |  async" >
+      <ion-label>{{ item.nombre }}</ion-label>
+      <ion-checkbox value="item.nombre" (click)="agregarCarrito(item.nombre)">></ion-checkbox>
+
+    
+      
+    </ion-item>
+    {{ itemSeleccionado }}
+    <!-- {{ item.checked }} -->
+    <!-- <ion-item *ngFor="let item of items |  async">
+      <ion-select > -->
+    <!-- <ion-option [(ngModel)]="toppings" multiple="true"> -->
+    <!-- {{ item.nombre }}
+        <! </ion-option> -->
+    <!-- </ion-select>
+    </ion-item>  -->
+
+  </ion-list>
+
+  <!-- {{ itemscheck }} -->
+
+</ion-content>
