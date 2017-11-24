@@ -106,7 +106,7 @@ def ponerObservaciones():
   output = {'observaciones':observaciones}
   return jsonify({'result' : output})
 
-@app.route('/addItemUser', methods=['PUT'])
+@app.route('/addItemUser', methods=['POST'])
 def agregarItemUsuario():
   codigo= request.json['codigoC']
   items = request.json['items']
@@ -116,13 +116,13 @@ def agregarItemUsuario():
     current = mongo.db.items.find({"nombre":item})
     new = current[0]
     x = new["vecesPrestado"] + 1
-    mongo.db.items.update({"nombre":item},{"$set":{"vecesPrestado":x}})
-                            
+    mongo.db.items.update({"nombre":item},{"$set":{"vecesPrestado":x}})        
+
   output = {'items':items}
   return jsonify({'result' : output})
 
 
-@app.route('/devolver', methods=['PUT'])
+@app.route('/devolver', methods=['POST'])
 def devolverItemUsuario():
   codigo= request.json['codigoC']
   cosas = request.json['cosas']
@@ -145,11 +145,34 @@ def devolverTodoUsuario():
 
 @app.route('/itemPorPersona', methods=['GET'])
 def itemPorPersona():
+    print 'estamos en items por persona'
     codigo= request.args['codigoC']
     estudiante = mongo.db.usuarios.find({"codigoC": codigo})
+    print 'este es el estudiante'
+    print estudiante
     items = estudiante[0]["items"]
-    return jsonify({'result' : items})
-  
+    print type(items)
+    print items
+    
+    cuantasVeces = dict()
+    for item in items:
+          try:
+            cuantasVeces[item] += 1
+          except:
+            cuantasVeces[item] = 1
+      
+    output = []
+    for key, value in cuantasVeces.iteritems():
+        print "key"
+        print "value"
+        output.append([key,value])
+    
+    print (" ajkshdakjsd")
+    print (output)
+
+
+    return jsonify({'result' : output})
+    
 @app.route('/administracion', methods=['POST'])
 #@crossdomain(origin='*')
 def validarIngreso():

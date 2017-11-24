@@ -107,35 +107,90 @@ var PrestamoPage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.itemServiceProvider = itemServiceProvider;
-        this.itemSeleccionado = {};
+        this.itemSeleccionado = [];
+        this.itemsParaDevolver = [];
+        this.codigoC = '';
+        this.listaDeItems = [];
+        this.dic = {};
+        this.usuario = this.navParams.get('usuario');
+        this.codigoC = this.usuario[3];
         this.traerItem();
+        this.traerItemsPersona();
     }
+    PrestamoPage_1 = PrestamoPage;
+    PrestamoPage.prototype.machetear = function () {
+        this.agregarItemUsuario();
+        this.agregarItemUsuario();
+    };
+    PrestamoPage.prototype.elregresodelmachete = function () {
+        this.devolver();
+        this.devolver();
+    };
+    PrestamoPage.prototype.devolver = function () {
+        this.itemServiceProvider.devolverItemsPersona(this.codigoC, this.itemsParaDevolver).subscribe();
+        this.itemsParaDevolver = [];
+        this.navCtrl.setRoot(PrestamoPage_1, { usuario: this.usuario });
+    };
     PrestamoPage.prototype.traerItem = function () {
         this.items = this.itemServiceProvider.traerItems();
     };
     PrestamoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad PrestamoPage');
     };
+    PrestamoPage.prototype.agregarItemUsuario = function () {
+        this.itemServiceProvider.agregarItemsUsuario(this.codigoC, this.itemSeleccionado).subscribe();
+        this.itemSeleccionado = [];
+        this.navCtrl.setRoot(PrestamoPage_1, { usuario: this.usuario });
+    };
+    PrestamoPage.prototype.traerItemsPersona = function () {
+        this.itemsPersona = this.itemServiceProvider.traerItemsPersona(this.codigoC);
+        //this.itemsPersona[0]
+    };
     PrestamoPage.prototype.agregarCarrito = function (item) {
         console.log("carrito", item);
-        if (this.itemSeleccionado[item] != true) {
-            this.itemSeleccionado[item] = true;
-            console.log("lista: ", this.itemSeleccionado);
+        console.log("Dic: ", this.dic);
+        if (this.chequearSiEsta(this.itemSeleccionado, item)) {
+            console.log("entro agg carrito");
+            this.itemSeleccionado.splice(this.itemSeleccionado.indexOf(item), 1);
         }
         else {
-            this.itemSeleccionado[item] = false;
-            console.log("lista: ", this.itemSeleccionado);
+            this.itemSeleccionado.push(item);
+        }
+        ;
+        console.log(this.itemSeleccionado, "agregar carrito");
+    };
+    PrestamoPage.prototype.chequearSiEsta = function (arreglo, item) {
+        for (var i = 0; i < arreglo.length; i++) {
+            if (arreglo[i] == item) {
+                return true;
+            }
+            return false;
         }
     };
-    PrestamoPage = __decorate([
+    PrestamoPage.prototype.devolverItem = function ($) {
+        var item = $[0];
+        console.log("tienda", item);
+        console.log("Dic: ", this.dic);
+        if (this.chequearSiEsta(this.itemsParaDevolver, item)) {
+            console.log("kajshdkjashdakjsd");
+            this.itemsParaDevolver.splice(this.itemsParaDevolver.indexOf(item), 1);
+        }
+        else {
+            this.itemsParaDevolver.push(item);
+        }
+        ;
+        console.log(this.itemsParaDevolver, "devolver item");
+    };
+    PrestamoPage = PrestamoPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-prestamo',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/`<ion-content padding>\n\n  <ion-list class="list_compra">\n\n    <h1>\n      Carrito\n    </h1>\n\n    <ion-item>\n\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list class="list_inventario">\n\n    <h1>\n      Tienda\n    </h1>\n\n    <!-- <ion-select [(ngModel)]="toppings" multiple="true">\n      <ion-option>\n        {{ item.nombre }}\n      </ion-option>\n    </ion-select> -->\n\n    <ion-item *ngFor="let item of items |  async" >\n      <ion-label>{{ item.nombre }}</ion-label>\n      <ion-checkbox value="item.nombre" (click)="agregarCarrito(item.nombre)">></ion-checkbox>\n\n    \n      \n    </ion-item>\n    {{ itemSeleccionado }}\n    <!-- {{ item.checked }} -->\n    <!-- <ion-item *ngFor="let item of items |  async">\n      <ion-select > -->\n    <!-- <ion-option [(ngModel)]="toppings" multiple="true"> -->\n    <!-- {{ item.nombre }}\n        <! </ion-option> -->\n    <!-- </ion-select>\n    </ion-item>  -->\n\n  </ion-list>\n\n  <!-- {{ itemscheck }} -->\n\n</ion-content>`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/,
+            selector: 'page-prestamo',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/`<ion-content padding>\n  <!-- {{ usuario }}\n  {{ codigoC }} -->\n  <ion-list class="list_compra">\n\n    <h1>\n      Carrito\n    </h1>\n\n\n      <ion-item *ngFor="let item of itemsPersona |  async" >\n        <ion-label>{{ item[0]  }}      {{  item[1] }}</ion-label>\n        <ion-checkbox  (click)="devolverItem(item)"> </ion-checkbox>\n      </ion-item>\n      <button ion-button round color="secondary" (click)="elregresodelmachete()">\n        Devolver\n      </button>\n\n      <button ion-button round color="secondary" (click)="devolver()">\n        Devolver todo\n      </button>\n\n      \n  \n\n  </ion-list>\n\n  <ion-list class="list_inventario">\n\n    <h1>\n      Tienda\n    </h1>\n\n    <!-- <ion-select [(ngModel)]="toppings" multiple="true">\n      <ion-option>\n        {{ item.nombre }}\n      </ion-option>\n    </ion-select> -->\n\n    <ion-item *ngFor="let item of items |  async" >\n      <ion-label>{{ item.nombre }}</ion-label>\n      <ion-checkbox (click)="agregarCarrito(item.nombre)"></ion-checkbox>\n    </ion-item>\n    <button ion-button round color="secondary" (click)="machetear()">\n      Prestar\n    </button>\n    <!-- {{ item.checked }} -->\n    <!-- <ion-item *ngFor="let item of items |  async">\n      <ion-select > -->\n    <!-- <ion-option [(ngModel)]="toppings" multiple="true"> -->\n    <!-- {{ item.nombre }}\n        <! </ion-option> -->\n    <!-- </ion-select>\n    </ion-item>  -->\n\n  </ion-list>\n\n  <!-- {{ itemscheck }} -->\n\n</ion-content>`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_item_service_item_service__["a" /* ItemServiceProvider */]])
     ], PrestamoPage);
     return PrestamoPage;
+    var PrestamoPage_1;
 }());
 
 //# sourceMappingURL=prestamo.js.map
@@ -239,10 +294,10 @@ var LoginServicesProvider = (function () {
     };
     LoginServicesProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__["a" /* ProviderSettingsProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__["a" /* ProviderSettingsProvider */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__["a" /* ProviderSettingsProvider */]])
     ], LoginServicesProvider);
     return LoginServicesProvider;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=login-services.js.map
@@ -623,10 +678,11 @@ var InicioPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-inicio',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n    Administración\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_prestar">\n    <ion-icon name="ios-basket-outline">\n    </ion-icon>\n    Prestar\n  </button>\n\n  <button ion-button round color="secondary" (click)="prestarItem()">\n    prestarrrr\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/inicio/inicio.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_login_services_login_services__["a" /* LoginServicesProvider */]])
     ], InicioPage);
     return InicioPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=inicio.js.map
@@ -668,6 +724,17 @@ var ItemServiceProvider = (function () {
     };
     ItemServiceProvider.prototype.traerItems = function () {
         return this.http.get(this.apiUrl + 'items').map(function (response) { return response.json().result; });
+    };
+    ItemServiceProvider.prototype.agregarItemsUsuario = function (codigoC, listaItems) {
+        return this.http.post(this.apiUrl + 'addItemUser', { 'codigoC': codigoC, 'items': listaItems }).
+            map(function (response) { return response.json().result; });
+    };
+    ItemServiceProvider.prototype.traerItemsPersona = function (codigoC) {
+        return this.http.get(this.apiUrl + 'itemPorPersona?codigoC=' + codigoC).map(function (response) { return response.json().result; });
+    };
+    ItemServiceProvider.prototype.devolverItemsPersona = function (codigoC, listaItems) {
+        return this.http.post(this.apiUrl + 'devolver', { 'codigoC': codigoC, 'cosas': listaItems }).
+            map(function (response) { return response.json().result; });
     };
     ItemServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),

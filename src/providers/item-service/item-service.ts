@@ -21,4 +21,18 @@ export class ItemServiceProvider {
     return this.http.get(this.apiUrl+'items').map(response => response.json().result);
   }
 
+  public agregarItemsUsuario(codigoC,listaItems){
+    return this.http.post(this.apiUrl+'addItemUser', {'codigoC' : codigoC,'items':listaItems}).
+    map(response => response.json().result)
+  }
+
+  public traerItemsPersona(codigoC){
+    return this.http.get(this.apiUrl+'itemPorPersona?codigoC='+codigoC).map(response => response.json().result);
+  }
+
+  public devolverItemsPersona(codigoC,listaItems){
+    return this.http.post(this.apiUrl+'devolver', {'codigoC' : codigoC,'cosas':listaItems}).
+    map(response => response.json().result)
+  }
+
 }
