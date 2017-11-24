@@ -30,6 +30,16 @@ var AdministracionPage = (function () {
         this.toastController = toastController;
         this.alertCtrl = alertCtrl;
         this.item = '';
+        this.nombre = '';
+        this.correo = '';
+        this.codigoE = '';
+        this.celular = '';
+        this.codigoC = '';
+        // Ac = Actualizado
+        this.nombreAc = '';
+        this.correoAc = '';
+        this.codigoEAc = '';
+        this.celularAc = '';
     }
     AdministracionPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AdministracionPage');
@@ -58,24 +68,63 @@ var AdministracionPage = (function () {
         this.item = '';
     };
     AdministracionPage.prototype.acercarCarnet = function () {
+        var _this = this;
         var alert = this.alertCtrl.create({
             title: 'Aviso',
             subTitle: 'Acerque el carné al lector por favor',
-            buttons: ['OK']
         });
         alert.present();
+        this.itemServiceProvider.direccionarPagina().subscribe(function (x) {
+            var estado = x.status;
+            if (estado.includes('true')) {
+                console.log('Estamos en prestamos');
+                alert.dismiss();
+                _this.mostrarInformacion(x.result);
+                // this.navCtrl.setRoot(AdministracionPage,{usuario:x.result});
+            }
+            else {
+                console.log('Estamos en registrar usuario');
+                alert.dismiss();
+            }
+        });
+    };
+    AdministracionPage.prototype.mostrarInformacion = function ($) {
+        console.log($);
+        console.log($.nombre);
+        this.nombre = $[5];
+        this.correo = $[2];
+        this.codigoE = $[4];
+        this.celular = $[6];
+        this.codigoC = $[3];
+    };
+    AdministracionPage.prototype.actualizarInformacion = function () {
+        this.itemServiceProvider.actualizarInformacion(this.nombreAc, this.correoAc, this.codigoC, this.codigoEAc, this.celularAc).subscribe();
+        if (!(this.nombreAc == "" || this.nombreAc == " ")) {
+            this.nombre = this.nombreAc;
+        }
+        if (!(this.correoAc == "" || this.correoAc == " ")) {
+            this.correo = this.correoAc;
+        }
+        if (!(this.codigoEAc == "" || this.codigoEAc == " ")) {
+            this.codigoE = this.codigoEAc;
+        }
+        if (!(this.celularAc == "" || this.celularAc == " ")) {
+            this.celular = this.celularAc;
+        }
+        this.nombreAc = '';
+        this.correoAc = '';
+        this.codigoEAc = '';
+        this.celularAc = '';
+        this.showToast("Información actualizada");
     };
     AdministracionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-administracion',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" [(ngModel)]="item"></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" (click)="agregarItem()" class="btn_item">\n    Agregar item\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <h1 text-center class="lbl_actualizarinfo">\n    Actualizar información\n  </h1>\n\n  <ion-list class="lista_izq">\n\n    <ion-item>\n      <ion-label fixed color="dark">Nombre</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Correo</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Código</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Celular</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list class="lista_der">\n\n    <ion-item>\n      <ion-label fixed color="dark">Nombre</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Correo</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Código</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Celular</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  {{ item }}\n\n  <button ion-button round color="secondary" class="btn_guardar">\n    Guardar\n  </button>\n\n  <button ion-button round color="danger" (click)="volverInicio()" class="btn_salir">\n    Salir\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
+            selector: 'page-administracion',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <!-- <ion-label fixed color="dark">Item</ion-label> -->\n    <ion-input type="text" [(ngModel)]="item" placeholder="Item"></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" (click)="agregarItem()" class="btn_item">\n    Agregar item\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <h1 text-center class="lbl_actualizarinfo">\n    Actualizar información\n  </h1>\n\n  <p class="informacion">\n    Llene únicamente los campos que desea actualizar\n  </p>\n\n  <ion-list class="lista_izq">\n\n    <ion-item>\n      Nombre: {{ nombre }}\n    </ion-item>\n\n    <ion-item>\n      Correo: {{ correo }}\n    </ion-item>\n\n    <ion-item>\n      Código: {{ codigoE }}\n    </ion-item>\n\n    <ion-item>\n      Celular: {{ celular }}\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list class="lista_der">\n\n    <ion-item>\n      <!-- <ion-label fixed color="dark">Nombre</ion-label> -->\n      <ion-input type="text" [(ngModel)]="nombreAc" placeholder="Nombre"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <!-- <ion-label fixed color="dark">Correo</ion-label> -->\n      <ion-input type="text" [(ngModel)]="correoAc" placeholder="Correo"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <!-- <ion-label fixed color="dark">Código</ion-label> -->\n      <ion-input type="text" [(ngModel)]="codigoEAc" placeholder="Código"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <!-- <ion-label fixed color="dark">Celular</ion-label> -->\n      <ion-input type="text" [(ngModel)]="celularAc" placeholder="Celular"></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <button ion-button round color="secondary" (click)="actualizarInformacion()" class="btn_guardar">\n    Guardar\n  </button>\n\n  <button ion-button round color="danger" (click)="volverInicio()" class="btn_salir">\n    Salir\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_item_service_item_service__["a" /* ItemServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_item_service_item_service__["a" /* ItemServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_item_service_item_service__["a" /* ItemServiceProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
     ], AdministracionPage);
     return AdministracionPage;
+    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=administracion.js.map
@@ -754,6 +803,13 @@ var ItemServiceProvider = (function () {
     };
     ItemServiceProvider.prototype.devolverTodo = function (codigoC) {
         return this.http.post(this.apiUrl + 'devolverTodo', { 'codigoC': codigoC }).
+            map(function (response) { return response.json().result; });
+    };
+    ItemServiceProvider.prototype.direccionarPagina = function () {
+        return this.http.get(this.apiUrl + 'obtenerCodigo').map(function (response) { return response.json(); });
+    };
+    ItemServiceProvider.prototype.actualizarInformacion = function (nombre, correo, codigoC, codigoE, celular) {
+        return this.http.post(this.apiUrl + 'actualizarInf', { 'nombre': nombre, 'correo': correo, 'codigoC': codigoC, 'codigoE': codigoE, 'celular': celular }).
             map(function (response) { return response.json().result; });
     };
     ItemServiceProvider = __decorate([

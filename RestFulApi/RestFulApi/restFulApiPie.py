@@ -81,7 +81,7 @@ def crearUsuario():
 
 @app.route('/item', methods=['POST'])
 def agregarItem():
-  nombre = request.json['nombre']
+  nombre = request.json['nombre'].upper()
   x= mongo.db.items.find({'nombre':nombre})
   flag = False
   try:
@@ -192,7 +192,7 @@ def validarIngreso():
       return jsonify(False)
 
 
-@app.route('/actualizarInf', methods=['PUT'])
+@app.route('/actualizarInf', methods=['POST'])
 def actualizarInfoUsuario():
   codigoC = request.json['codigoC']
   celular = request.json['celular']

@@ -25690,6 +25690,12 @@ page-administracion .lbl_actualizarinfo {
   left: 41%;
 }
 
+page-administracion .informacion {
+  position: absolute;
+  top: 32%;
+  left: 38%;
+}
+
 page-administracion .lista_izq {
   position: absolute;
   top: 40%;

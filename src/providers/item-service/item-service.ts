@@ -12,37 +12,46 @@ export class ItemServiceProvider {
     public providerSettingsProvider: ProviderSettingsProvider) {
   }
 
-  public agregarItem(nombre){
-    return this.http.post(this.apiUrl+'item', {'nombre' : nombre}).
-    map(response => response.text())
+  public agregarItem(nombre) {
+    return this.http.post(this.apiUrl + 'item', { 'nombre': nombre }).
+      map(response => response.text())
   }
 
-  public traerItems(){
-    return this.http.get(this.apiUrl+'items').map(response => response.json().result);
+  public traerItems() {
+    return this.http.get(this.apiUrl + 'items').map(response => response.json().result);
   }
 
-  public agregarItemsUsuario(codigoC,listaItems){
-    return this.http.post(this.apiUrl+'addItemUser', {'codigoC' : codigoC,'items':listaItems}).
-    map(response => response.json().result)
+  public agregarItemsUsuario(codigoC, listaItems) {
+    return this.http.post(this.apiUrl + 'addItemUser', { 'codigoC': codigoC, 'items': listaItems }).
+      map(response => response.json().result)
   }
 
-  public traerItemsPersona(codigoC){
-    return this.http.get(this.apiUrl+'itemPorPersona?codigoC='+codigoC).map(response => response.json().result);
+  public traerItemsPersona(codigoC) {
+    return this.http.get(this.apiUrl + 'itemPorPersona?codigoC=' + codigoC).map(response => response.json().result);
   }
 
-  public devolverItemsPersona(codigoC,listaItems){
-    return this.http.post(this.apiUrl+'devolver', {'codigoC' : codigoC,'cosas':listaItems}).
-    map(response => response.json().result)
+  public devolverItemsPersona(codigoC, listaItems) {
+    return this.http.post(this.apiUrl + 'devolver', { 'codigoC': codigoC, 'cosas': listaItems }).
+      map(response => response.json().result)
   }
 
-  public ponerObservaciones(codigoC, observaciones){
-    return this.http.post(this.apiUrl+'observaciones', {'codigoC' : codigoC, 'observaciones' : observaciones}).
-    map(response => response.json().result)
+  public ponerObservaciones(codigoC, observaciones) {
+    return this.http.post(this.apiUrl + 'observaciones', { 'codigoC': codigoC, 'observaciones': observaciones }).
+      map(response => response.json().result)
   }
 
-  public devolverTodo(codigoC){
-    return this.http.post(this.apiUrl+'devolverTodo', {'codigoC' : codigoC}).
-    map(response => response.json().result)
+  public devolverTodo(codigoC) {
+    return this.http.post(this.apiUrl + 'devolverTodo', { 'codigoC': codigoC }).
+      map(response => response.json().result)
+  }
+
+  public direccionarPagina() {
+    return this.http.get(this.apiUrl + 'obtenerCodigo').map(response => response.json());
+  }
+
+  public actualizarInformacion(nombre, correo, codigoC, codigoE, celular) {
+    return this.http.post(this.apiUrl + 'actualizarInf', { 'nombre': nombre, 'correo': correo, 'codigoC': codigoC, 'codigoE': codigoE, 'celular': celular }).
+      map(response => response.json().result)
   }
 
 }

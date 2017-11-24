@@ -1,13 +1,12 @@
 <ion-content padding>
 
-
   <h1 text-center>
     Agregar item
   </h1>
 
   <ion-item>
-    <ion-label fixed color="dark">Item</ion-label>
-    <ion-input type="text" [(ngModel)]="item"></ion-input>
+    <!-- <ion-label fixed color="dark">Item</ion-label> -->
+    <ion-input type="text" [(ngModel)]="item" placeholder="Item"></ion-input>
   </ion-item>
 
   <button ion-button round color="secondary" (click)="agregarItem()" class="btn_item">
@@ -22,26 +21,26 @@
     Actualizar información
   </h1>
 
+  <p class="informacion">
+    Llene únicamente los campos que desea actualizar
+  </p>
+
   <ion-list class="lista_izq">
 
     <ion-item>
-      <ion-label fixed color="dark">Nombre</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      Nombre: {{ nombre }}
     </ion-item>
 
     <ion-item>
-      <ion-label fixed color="dark">Correo</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      Correo: {{ correo }}
     </ion-item>
 
     <ion-item>
-      <ion-label fixed color="dark">Código</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      Código: {{ codigoE }}
     </ion-item>
 
     <ion-item>
-      <ion-label fixed color="dark">Celular</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      Celular: {{ celular }}
     </ion-item>
 
   </ion-list>
@@ -49,30 +48,28 @@
   <ion-list class="lista_der">
 
     <ion-item>
-      <ion-label fixed color="dark">Nombre</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <!-- <ion-label fixed color="dark">Nombre</ion-label> -->
+      <ion-input type="text" [(ngModel)]="nombreAc" placeholder="Nombre"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed color="dark">Correo</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <!-- <ion-label fixed color="dark">Correo</ion-label> -->
+      <ion-input type="text" [(ngModel)]="correoAc" placeholder="Correo"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed color="dark">Código</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <!-- <ion-label fixed color="dark">Código</ion-label> -->
+      <ion-input type="text" [(ngModel)]="codigoEAc" placeholder="Código"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed color="dark">Celular</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <!-- <ion-label fixed color="dark">Celular</ion-label> -->
+      <ion-input type="text" [(ngModel)]="celularAc" placeholder="Celular"></ion-input>
     </ion-item>
 
   </ion-list>
 
-  {{ item }}
-
-  <button ion-button round color="secondary" class="btn_guardar">
+  <button ion-button round color="secondary" (click)="actualizarInformacion()" class="btn_guardar">
     Guardar
   </button>
 
