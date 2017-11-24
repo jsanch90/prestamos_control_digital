@@ -138,10 +138,4 @@ export class InicioPage {
     prompt.present();
   }
 
-  // Método provisional
-  prestarItem() {
-    this.navCtrl.push(PrestamoPage);
-    this.direction = this.loginServicesProvider.direccionarPagina().subscribe();
-  }
-
 }

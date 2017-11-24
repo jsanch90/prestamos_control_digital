@@ -1,60 +1,55 @@
 <ion-content padding>
-  <!-- {{ usuario }}
-  {{ codigoC }} -->
-  <ion-list class="list_compra">
+  <ion-label class="lbl_nombre">
+    Nombre: {{ usuario[5] }}
+  </ion-label>
 
-    <h1>
-      Carrito
-    </h1>
+  <ion-label class="lbl_codigo">
+    Código: {{ usuario[4] }}
+  </ion-label>
 
+  <h1 class="carrito">
+    Carrito
+  </h1>
 
-      <ion-item *ngFor="let item of itemsPersona |  async" >
-        <ion-label>{{ item[0]  }}      {{  item[1] }}</ion-label>
-        <ion-checkbox  (click)="devolverItem(item)"> </ion-checkbox>
+  <ion-scroll scrollY="true" class="compra">
+    <ion-list class="list_compra">
+
+      <ion-item *ngFor="let item of itemsPersona |  async">
+        <ion-label>{{ item[0] }} {{ item[1] }}</ion-label>
+        <ion-checkbox (click)="devolverItem(item)"> </ion-checkbox>
       </ion-item>
-      <button ion-button round color="secondary" (click)="elregresodelmachete()">
-        Devolver
-      </button>
 
-      <button ion-button round color="secondary" (click)="devolver()">
-        Devolver todo
-      </button>
 
-      
-  
+    </ion-list>
+  </ion-scroll>
 
-  </ion-list>
+  <button ion-button round color="secondary" (click)="elregresodelmachete()" class="btn_devolver">
+    Devolver
+  </button>
 
-  <ion-list class="list_inventario">
+  <button ion-button round color="secondary" (click)="elregresodelmacheteV2()" class="btn_devolverTodo">
+    Devolver todo
+  </button>
 
-    <h1>
-      Tienda
-    </h1>
+  <h1 class="tienda">
+    Tienda
+  </h1>
+  <ion-scroll scrollY="true" class="inventario">
+    <ion-list class="list_inventario">
 
-    <!-- <ion-select [(ngModel)]="toppings" multiple="true">
-      <ion-option>
-        {{ item.nombre }}
-      </ion-option>
-    </ion-select> -->
+      <ion-item *ngFor="let item of items |  async">
+        <ion-label>{{ item.nombre }}</ion-label>
+        <ion-checkbox (click)="agregarCarrito(item.nombre)"></ion-checkbox>
+      </ion-item>
 
-    <ion-item *ngFor="let item of items |  async" >
-      <ion-label>{{ item.nombre }}</ion-label>
-      <ion-checkbox (click)="agregarCarrito(item.nombre)"></ion-checkbox>
-    </ion-item>
-    <button ion-button round color="secondary" (click)="machetear()">
-      Prestar
-    </button>
-    <!-- {{ item.checked }} -->
-    <!-- <ion-item *ngFor="let item of items |  async">
-      <ion-select > -->
-    <!-- <ion-option [(ngModel)]="toppings" multiple="true"> -->
-    <!-- {{ item.nombre }}
-        <! </ion-option> -->
-    <!-- </ion-select>
-    </ion-item>  -->
+    </ion-list>
+  </ion-scroll>
+  <button ion-button round color="secondary" (click)="machetear()" class="btn_prestar">
+    Prestar
+  </button>
 
-  </ion-list>
-
-  <!-- {{ itemscheck }} -->
+  <button ion-button round color="danger" (click)="volverInicio()" class="btn_salir">
+    Salir
+  </button>
 
 </ion-content>

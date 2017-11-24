@@ -35,4 +35,14 @@ export class ItemServiceProvider {
     map(response => response.json().result)
   }
 
+  public ponerObservaciones(codigoC, observaciones){
+    return this.http.post(this.apiUrl+'observaciones', {'codigoC' : codigoC, 'observaciones' : observaciones}).
+    map(response => response.json().result)
+  }
+
+  public devolverTodo(codigoC){
+    return this.http.post(this.apiUrl+'devolverTodo', {'codigoC' : codigoC}).
+    map(response => response.json().result)
+  }
+
 }

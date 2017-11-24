@@ -1,10 +1,63 @@
 page-prestamo {
+    .lbl_nombre {
+        position: absolute;
+        left: 40%;
+    }
+    .lbl_codigo {
+        position: absolute;
+        left: 40%;
+        top: 5%;
+    }
+    .carrito{
+        position: absolute;
+        left: 15%;
+        top: 12%;
+    }
+    .compra {
+        height: 400px;
+        width: 400px;
+        position: absolute;
+        left: 10%;
+        top: 20%;
+    }
     .list_compra {
         position: absolute;
         left: 10%;
     }
+    .btn_devolver{
+        position: absolute;
+        left: 14%;
+        top: 80%;
+    }
+    .btn_devolverTodo{
+        position: absolute;
+        left: 24%;
+        top: 80%;
+    }
+    .tienda {
+        position: absolute;
+        right: 25%;
+        top: 12%;
+    }
+    .inventario {
+        height: 400px;
+        width: 400px;
+        position: absolute;
+        right: 10%;
+        top: 20%;
+    }
     .list_inventario {
         position: absolute;
         right: 20%;
+    }
+    .btn_prestar{
+        position: absolute;
+        right: 25%;
+        top: 80%;
+    }
+    .btn_salir {
+        position: absolute;
+        bottom: 1%;
+        left: 1%;
     }
 }

@@ -7,7 +7,7 @@ webpackJsonp([2],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdministracionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inicio_inicio__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inicio_inicio__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_item_service_item_service__ = __webpack_require__(81);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -67,7 +67,7 @@ var AdministracionPage = (function () {
     };
     AdministracionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-administracion',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" [(ngModel)]="item"></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" (click)="agregarItem()" class="btn_item">\n    Agregar item\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <h1 text-center class="lbl_actualizarinfo">\n    Actualizar información\n  </h1>\n\n  <ion-list class="lista_izq">\n\n    <ion-item>\n      <ion-label fixed color="dark">Nombre</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Correo</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Código</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Celular</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list class="lista_der">\n\n    <ion-item>\n      <ion-label fixed color="dark">Nombre</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Correo</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Código</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Celular</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  {{ item }}\n\n  <button ion-button round color="secondary" class="btn_guardar">\n    Guardar\n  </button>\n\n  <button ion-button round color="danger" (click)="volverInicio()" class="btn_salir">\n    Salir\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
+            selector: 'page-administracion',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/administracion/administracion.html"*/`<ion-content padding>\n\n\n  <h1 text-center>\n    Agregar item\n  </h1>\n\n  <ion-item>\n    <ion-label fixed color="dark">Item</ion-label>\n    <ion-input type="text" [(ngModel)]="item"></ion-input>\n  </ion-item>\n\n  <button ion-button round color="secondary" (click)="agregarItem()" class="btn_item">\n    Agregar item\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_actualizar">\n    Actualizar información\n  </button>\n\n  <h1 text-center class="lbl_actualizarinfo">\n    Actualizar información\n  </h1>\n\n  <ion-list class="lista_izq">\n\n    <ion-item>\n      <ion-label fixed color="dark">Nombre</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Correo</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Código</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Celular</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  <ion-list class="lista_der">\n\n    <ion-item>\n      <ion-label fixed color="dark">Nombre</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Correo</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Código</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label fixed color="dark">Celular</ion-label>\n      <ion-input type="text" value=""></ion-input>\n    </ion-item>\n\n  </ion-list>\n\n  {{ item }}\n\n  <button ion-button round color="secondary" class="btn_guardar">\n    Guardar\n  </button>\n\n  <button ion-button round color="danger" (click)="volverInicio()" class="btn_salir">\n    Salir\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/administracion/administracion.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -90,6 +90,7 @@ var AdministracionPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_item_service_item_service__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__inicio_inicio__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -99,6 +100,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -112,6 +114,7 @@ var PrestamoPage = (function () {
         this.codigoC = '';
         this.listaDeItems = [];
         this.dic = {};
+        this.observaciones = '';
         this.usuario = this.navParams.get('usuario');
         this.codigoC = this.usuario[3];
         this.traerItem();
@@ -125,6 +128,10 @@ var PrestamoPage = (function () {
     PrestamoPage.prototype.elregresodelmachete = function () {
         this.devolver();
         this.devolver();
+    };
+    PrestamoPage.prototype.elregresodelmacheteV2 = function () {
+        this.devolverTodo();
+        this.devolverTodo();
     };
     PrestamoPage.prototype.devolver = function () {
         this.itemServiceProvider.devolverItemsPersona(this.codigoC, this.itemsParaDevolver).subscribe();
@@ -181,9 +188,19 @@ var PrestamoPage = (function () {
         ;
         console.log(this.itemsParaDevolver, "devolver item");
     };
+    PrestamoPage.prototype.ponerObservaciones = function () {
+        this.itemServiceProvider.ponerObservaciones(this.codigoC, this.observaciones).subscribe();
+    };
+    PrestamoPage.prototype.devolverTodo = function () {
+        this.itemServiceProvider.devolverTodo(this.codigoC).subscribe();
+        this.navCtrl.setRoot(PrestamoPage_1, { usuario: this.usuario });
+    };
+    PrestamoPage.prototype.volverInicio = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__inicio_inicio__["a" /* InicioPage */]);
+    };
     PrestamoPage = PrestamoPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-prestamo',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/`<ion-content padding>\n  <!-- {{ usuario }}\n  {{ codigoC }} -->\n  <ion-list class="list_compra">\n\n    <h1>\n      Carrito\n    </h1>\n\n\n      <ion-item *ngFor="let item of itemsPersona |  async" >\n        <ion-label>{{ item[0]  }}      {{  item[1] }}</ion-label>\n        <ion-checkbox  (click)="devolverItem(item)"> </ion-checkbox>\n      </ion-item>\n      <button ion-button round color="secondary" (click)="elregresodelmachete()">\n        Devolver\n      </button>\n\n      <button ion-button round color="secondary" (click)="devolver()">\n        Devolver todo\n      </button>\n\n      \n  \n\n  </ion-list>\n\n  <ion-list class="list_inventario">\n\n    <h1>\n      Tienda\n    </h1>\n\n    <!-- <ion-select [(ngModel)]="toppings" multiple="true">\n      <ion-option>\n        {{ item.nombre }}\n      </ion-option>\n    </ion-select> -->\n\n    <ion-item *ngFor="let item of items |  async" >\n      <ion-label>{{ item.nombre }}</ion-label>\n      <ion-checkbox (click)="agregarCarrito(item.nombre)"></ion-checkbox>\n    </ion-item>\n    <button ion-button round color="secondary" (click)="machetear()">\n      Prestar\n    </button>\n    <!-- {{ item.checked }} -->\n    <!-- <ion-item *ngFor="let item of items |  async">\n      <ion-select > -->\n    <!-- <ion-option [(ngModel)]="toppings" multiple="true"> -->\n    <!-- {{ item.nombre }}\n        <! </ion-option> -->\n    <!-- </ion-select>\n    </ion-item>  -->\n\n  </ion-list>\n\n  <!-- {{ itemscheck }} -->\n\n</ion-content>`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/,
+            selector: 'page-prestamo',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/`<ion-content padding>\n  <ion-label class="lbl_nombre">\n    Nombre: {{ usuario[5] }}\n  </ion-label>\n\n  <ion-label class="lbl_codigo">\n    Código: {{ usuario[4] }}\n  </ion-label>\n\n  <h1 class="carrito">\n    Carrito\n  </h1>\n\n  <ion-scroll scrollY="true" class="compra">\n    <ion-list class="list_compra">\n\n      <ion-item *ngFor="let item of itemsPersona |  async">\n        <ion-label>{{ item[0] }} {{ item[1] }}</ion-label>\n        <ion-checkbox (click)="devolverItem(item)"> </ion-checkbox>\n      </ion-item>\n\n\n    </ion-list>\n  </ion-scroll>\n\n  <button ion-button round color="secondary" (click)="elregresodelmachete()" class="btn_devolver">\n    Devolver\n  </button>\n\n  <button ion-button round color="secondary" (click)="elregresodelmacheteV2()" class="btn_devolverTodo">\n    Devolver todo\n  </button>\n\n  <h1 class="tienda">\n    Tienda\n  </h1>\n  <ion-scroll scrollY="true" class="inventario">\n    <ion-list class="list_inventario">\n\n      <ion-item *ngFor="let item of items |  async">\n        <ion-label>{{ item.nombre }}</ion-label>\n        <ion-checkbox (click)="agregarCarrito(item.nombre)"></ion-checkbox>\n      </ion-item>\n\n    </ion-list>\n  </ion-scroll>\n  <button ion-button round color="secondary" (click)="machetear()" class="btn_prestar">\n    Prestar\n  </button>\n\n  <button ion-button round color="danger" (click)="volverInicio()" class="btn_salir">\n    Salir\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/prestamo/prestamo.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -248,11 +265,11 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginServicesProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_provider_settings_provider_settings__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -328,13 +345,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_http__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_inicio_inicio__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_inicio_inicio__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_administracion_administracion__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_prestamo_prestamo__ = __webpack_require__(105);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_login_services_login_services__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_provider_settings_provider_settings__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_provider_settings_provider_settings__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_item_service_item_service__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_registro_service_registro_service__ = __webpack_require__(278);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -412,7 +429,7 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_inicio_inicio__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_inicio_inicio__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -438,7 +455,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/app/app.html"*/`<ion-nav [root]="rootPage"></ion-nav>\n`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -454,9 +471,9 @@ var MyApp = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistroServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_settings_provider_settings__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_settings_provider_settings__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -490,43 +507,7 @@ var RegistroServiceProvider = (function () {
 
 /***/ }),
 
-/***/ 47:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProviderSettingsProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var CONFIG = {
-    apiUrl: 'http://localhost:5000/'
-};
-var ProviderSettingsProvider = (function () {
-    function ProviderSettingsProvider() {
-    }
-    ProviderSettingsProvider.prototype.getApiUrl = function () {
-        return CONFIG.apiUrl;
-    };
-    ProviderSettingsProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [])
-    ], ProviderSettingsProvider);
-    return ProviderSettingsProvider;
-}());
-
-//# sourceMappingURL=provider-settings.js.map
-
-/***/ }),
-
-/***/ 79:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -669,14 +650,9 @@ var InicioPage = (function () {
         });
         prompt.present();
     };
-    // Método provisional
-    InicioPage.prototype.prestarItem = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__prestamo_prestamo__["a" /* PrestamoPage */]);
-        this.direction = this.loginServicesProvider.direccionarPagina().subscribe();
-    };
     InicioPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-inicio',template:/*ion-inline-start:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n    Administración\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_prestar">\n    <ion-icon name="ios-basket-outline">\n    </ion-icon>\n    Prestar\n  </button>\n\n  <button ion-button round color="secondary" (click)="prestarItem()">\n    prestarrrr\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/josh/Documentos/U.SlV/Teoria_Conmutacion/prestamos_control_digital/src/pages/inicio/inicio.html"*/
+            selector: 'page-inicio',template:/*ion-inline-start:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/inicio/inicio.html"*/`<ion-content padding class="contenido">\n  <button ion-button round color="secondary" (click)="mostrarIngreso()" class="btn_administracion">\n    <ion-icon name="contacts">\n    </ion-icon>\n    Administración\n  </button>\n\n  <button ion-button round color="secondary" (click)="acercarCarnet()" class="btn_prestar">\n    <ion-icon name="ios-basket-outline">\n    </ion-icon>\n    Prestar\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/camilovilla/VillaMAmon/prestamos_control_digital/src/pages/inicio/inicio.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
@@ -689,14 +665,50 @@ var InicioPage = (function () {
 
 /***/ }),
 
+/***/ 48:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProviderSettingsProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var CONFIG = {
+    apiUrl: 'http://localhost:5000/'
+};
+var ProviderSettingsProvider = (function () {
+    function ProviderSettingsProvider() {
+    }
+    ProviderSettingsProvider.prototype.getApiUrl = function () {
+        return CONFIG.apiUrl;
+    };
+    ProviderSettingsProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], ProviderSettingsProvider);
+    return ProviderSettingsProvider;
+}());
+
+//# sourceMappingURL=provider-settings.js.map
+
+/***/ }),
+
 /***/ 81:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_settings_provider_settings__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__provider_settings_provider_settings__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -734,6 +746,14 @@ var ItemServiceProvider = (function () {
     };
     ItemServiceProvider.prototype.devolverItemsPersona = function (codigoC, listaItems) {
         return this.http.post(this.apiUrl + 'devolver', { 'codigoC': codigoC, 'cosas': listaItems }).
+            map(function (response) { return response.json().result; });
+    };
+    ItemServiceProvider.prototype.ponerObservaciones = function (codigoC, observaciones) {
+        return this.http.post(this.apiUrl + 'observaciones', { 'codigoC': codigoC, 'observaciones': observaciones }).
+            map(function (response) { return response.json().result; });
+    };
+    ItemServiceProvider.prototype.devolverTodo = function (codigoC) {
+        return this.http.post(this.apiUrl + 'devolverTodo', { 'codigoC': codigoC }).
             map(function (response) { return response.json().result; });
     };
     ItemServiceProvider = __decorate([

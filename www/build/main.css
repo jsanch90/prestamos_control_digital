@@ -25731,12 +25731,75 @@ page-inicio .btn_prestar {
   right: 15%;
 }
 
+page-prestamo .lbl_nombre {
+  position: absolute;
+  left: 40%;
+}
+
+page-prestamo .lbl_codigo {
+  position: absolute;
+  left: 40%;
+  top: 5%;
+}
+
+page-prestamo .carrito {
+  position: absolute;
+  left: 15%;
+  top: 12%;
+}
+
+page-prestamo .compra {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  left: 10%;
+  top: 20%;
+}
+
 page-prestamo .list_compra {
   position: absolute;
   left: 10%;
 }
 
+page-prestamo .btn_devolver {
+  position: absolute;
+  left: 14%;
+  top: 80%;
+}
+
+page-prestamo .btn_devolverTodo {
+  position: absolute;
+  left: 24%;
+  top: 80%;
+}
+
+page-prestamo .tienda {
+  position: absolute;
+  right: 25%;
+  top: 12%;
+}
+
+page-prestamo .inventario {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  right: 10%;
+  top: 20%;
+}
+
 page-prestamo .list_inventario {
   position: absolute;
   right: 20%;
+}
+
+page-prestamo .btn_prestar {
+  position: absolute;
+  right: 25%;
+  top: 80%;
+}
+
+page-prestamo .btn_salir {
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
 }

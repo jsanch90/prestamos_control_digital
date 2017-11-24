@@ -98,7 +98,7 @@ def agregarItem():
 
 
 
-@app.route('/observaciones', methods=['PUT'])
+@app.route('/observaciones', methods=['POST'])
 def ponerObservaciones():
   codigo= request.json['codigoC']
   observaciones = request.json['observaciones']
@@ -136,7 +136,7 @@ def devolverItemUsuario():
   return jsonify({'result' : output})
 
 
-@app.route('/devolverTodo', methods=['PUT'])
+@app.route('/devolverTodo', methods=['POST'])
 def devolverTodoUsuario():
   codigo= request.json['codigoC']
   mongo.db.usuarios.update({"codigoC" : codigo }, { "$set": { "items": []}})

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { ItemServiceProvider } from '../../providers/item-service/item-service';
+import { InicioPage } from '../inicio/inicio';
 
 @IonicPage()
 @Component({
@@ -18,6 +19,7 @@ export class PrestamoPage {
   itemsPersona:Observable<any>;
   listaDeItems =[];
   dic= {};
+  observaciones = '';
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -38,6 +40,11 @@ export class PrestamoPage {
    elregresodelmachete(){
     this.devolver()
     this.devolver()
+   }
+
+   elregresodelmacheteV2(){
+    this.devolverTodo();
+    this.devolverTodo();
    }
 
   devolver(){
@@ -100,8 +107,19 @@ export class PrestamoPage {
       this.itemsParaDevolver.push(item)
     };
     console.log(this.itemsParaDevolver, "devolver item")
-    
+  }
 
+  ponerObservaciones(){
+    this.itemServiceProvider.ponerObservaciones(this.codigoC, this.observaciones).subscribe();
+  }
+
+  devolverTodo(){
+    this.itemServiceProvider.devolverTodo(this.codigoC).subscribe();
+    this.navCtrl.setRoot(PrestamoPage,{usuario: this.usuario});    
+  }
+
+  volverInicio(){
+    this.navCtrl.setRoot(InicioPage);
   }
 }
 
