@@ -62,11 +62,11 @@ export class InicioPage {
         {
           text: 'Ingresar',
           handler: data => {
-            console.log(typeof (data.usuario));
-            this.verificar(data.usuario, data.contrasena);
-            console.log('Saved clicked');
+              if(data.usuario=="root" && data.contrasena=="root") {
+		  this.navCtrl.setRoot(AdministracionPage)
+		}
+	      
           }
-
         }
       ]
     });
